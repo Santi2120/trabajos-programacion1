@@ -1,7 +1,7 @@
-# Pido la fecha
+
 fecha = input("Ingrese la fecha actual en formato dia, DD/MM: ")
 
-# Separo el día de la fecha
+
 partes = fecha.split(",")
 if len(partes) != 2:
     print("Error en el formato")
