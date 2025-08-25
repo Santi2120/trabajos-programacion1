@@ -1,6 +1,4 @@
-
 fecha = input("Ingrese la fecha actual en formato dia, DD/MM: ")
-
 
 partes = fecha.split(",")
 if len(partes) != 2:
