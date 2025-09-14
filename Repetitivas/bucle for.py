@@ -1,11 +1,11 @@
-
+#bucle for
 alfabeto = "abcdefghijklmnñopqrstuvwxyz"
 
 
 corrimiento = int(input("Ingrese el corrimiento: "))
 
 
-for i in range(1, 6):  # el jefe manda 5 mensajes
+for i in range(1, 6): 
     mensaje = input(f"Ingrese el mensaje {i}: ")
     encriptado = ""
 
