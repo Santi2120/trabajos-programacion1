@@ -43,4 +43,40 @@ while True:
                 mostrar_paises(filtrar_por_rango(paises, "superficie", min_s, max_s))
             except ValueError:
                 print(" Ingrese valores numericos validos.")                
-    
+        case "4":
+                try:
+                    min_s = int(input("Superficie mínima: "))
+                    max_s = int(input("Superficie máxima: "))
+                    mostrar_paises(filtrar_por_rango(paises, "superficie", min_s, max_s))
+                except ValueError:
+                    print("⚠️ Ingrese valores numéricos válidos.")
+
+        case "5":
+                campo = input("Campo para ordenar (nombre/poblacion/superficie): ").lower()
+                descendente = input("¿Orden descendente? (s/n): ").lower() == "s"
+                if campo in ["nombre", "poblacion", "superficie"]:
+                    mostrar_paises(ordenar_paises(paises, campo, descendente))
+                else:
+                    print("Campo no válido.")
+
+        case "6":
+                e = estadisticas(paises)
+                if e:
+                    print(f"\nPaís con mayor población: {e['mayor_poblacion']['nombre']}")
+                    print(f"País con menor población: {e['menor_poblacion']['nombre']}")
+                    print(f"Promedio de población: {e['promedio_poblacion']:.2f}")
+                    print(f"Promedio de superficie: {e['promedio_superficie']:.2f}")
+                    print("Cantidad de países por continente:")
+                    for cont, cant in e["cantidad_por_continente"].items():
+                        print(f"  {cont}: {cant}")
+
+        case "7":
+                print(" Saliendo del programa... ¡Hasta luego!")
+                break
+
+        case _:
+                print(" Opción no válida. Intente nuevamente.")
+
+
+if __name__ == "__main__":
+    menu()
